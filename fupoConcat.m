@@ -1,4 +1,4 @@
-function A = fupoConcat(f,c,x,n,m,k)
+function A = fupoConcat(f,c,beta,x,n,m,k)
 % FUPOCONCAT Summary of this function goes here
 %   Detailed explanation goes here
 % f -- function
@@ -8,7 +8,7 @@ function A = fupoConcat(f,c,x,n,m,k)
 % m -- Farey level
 % k -- length of concatenation pattern
 A = [];
-rotInt = rotationInterval(f,c,x,n);
+rotInt = rotationInterval(f,c,beta,x,n);
 
 a = rotInt(1);
 b = rotInt(2);
@@ -28,15 +28,17 @@ q1 = double(Q1);
 condition1 = (gcd(p0,q0) == 1);
 condition2 = (gcd(p1,q1) == 1);
 condition3 = (q0 == q1);
+condition4 = (p0 == 0);
 
-if (~condition1 || ~condition2 || condition3)
+if (~condition1 || ~condition2 || condition3 || condition4)
     return
 end  
 
+oldp0 = p0;
+oldq0 = q0;
+oldq1 = q1;
+
 if (q0 > q1)
-    oldp0 = p0;
-    oldq0 = q0;
-    oldq1 = q1;
     p0 = q1-p1;
     q0 = q1;
     p1 = oldq0-oldp0;

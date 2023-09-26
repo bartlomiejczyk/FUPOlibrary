@@ -1,9 +1,11 @@
-function rotInt = rotationInterval(f,c,x,n)
+function rotInt = rotationInterval(f,d,beta,x,n)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
-fdown = waterMap(f,c,f(0));
-fup = waterMap(f,c,f(1));
-a = rotationNumber(fdown,c,x,n);
-b = rotationNumber(fup,c,x,n);
-rotInt = [a b];
+b = f(d)-beta;
+c = f(d);
+fdown = waterMap(f,d,f(b));
+fup = waterMap(f,d,f(c));
+down = rotationNumber(fdown,d,x,n);
+up = rotationNumber(fup,d,x,n);
+rotInt = [down up];
 end
