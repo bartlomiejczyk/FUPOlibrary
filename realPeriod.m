@@ -1,4 +1,4 @@
-function p = realperiod(x)
+function p = realPeriod(x)
 l = length(x);
 sp = seqperiod(x);
 if rem(l,sp) == 0
