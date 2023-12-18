@@ -4,8 +4,15 @@
 
 clear
 
+%MAIN PARAMETERS
+%alpha = 0.05; beta = 0.1; a = 0.1; d = 0.367; mu = 1.6;
+%alpha = 0; beta = 0.3; a = 0.1; d = 0.367; mu = 1.6;%mu = 1.1;mu = 1.2;mu = 1.4;mu = 1.8;mu = 1.9;mu = 2.6
+%alpha = -0.2; beta = 0.45; a = 0.1; d = 0.367; mu = 1.6;
+%alpha = -0.25; beta = 0.455; a = 0.1; d = 0.37;  mu = 1.6;
+mu = 1.6; a = 0.1; d = 0.37; alpha = -0.05;  beta = 0.455; 
+
 % NLCNV MODEL MAP, DISCONTINUITY POINT, LENGTH OF INTERVAL
-[g, d, intlen] = nlcnvMap;
+[g, d, intlen] = nlcnvMap(mu,a,d,alpha,beta);
 
 % INITIAL POINT OF ITERATIONS FOR ROTATION INTERVAL
 b = g(d);
