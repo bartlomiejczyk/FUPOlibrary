@@ -12,7 +12,7 @@ check0 = zeros(1,n);
 
 % tag with check0=1 all aperiodic sequences
 for j=1:n
-    if (realperiod(A(j,:)) == k)
+    if (realPeriod(A(j,:)) == k)
         check0(j) = 1;
     end
 end

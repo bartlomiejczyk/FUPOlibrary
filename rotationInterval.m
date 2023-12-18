@@ -1,8 +1,8 @@
-function rotInt = rotationInterval(f,d,beta,x,n)
+function rotInt = rotationInterval(f,d,intlen,x,n)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
-b = f(d)-beta;
-c = f(d);
+b = f(d);
+c = f(d)+intlen;
 fdown = waterMap(f,d,f(b));
 fup = waterMap(f,d,f(c));
 down = rotationNumber(fdown,d,x,n);
